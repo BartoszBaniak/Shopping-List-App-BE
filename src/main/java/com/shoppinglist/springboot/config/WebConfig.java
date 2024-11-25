@@ -13,7 +13,7 @@ public class WebConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/autocomplete").allowedOrigins("http://localhost:8080"); // Zmień na adres swojego frontendu
+                registry.addMapping("/autocomplete").allowedOrigins("*");
             }
         };
     }
