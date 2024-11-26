@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.shoppinglist</groupId>
 	<artifactId>springboot-shop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-shop</name>
 	<description>project for Spring Boot</description>
+
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -24,7 +28,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -47,7 +50,7 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-crypto</artifactId>
-			<version>5.5.0</version> <!-- lub odpowiednia wersja -->
+			<version>5.5.0</version> <!-- or suitable version -->
 		</dependency>
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
@@ -69,7 +72,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>4.0.1</version> <!-- lub inna odpowiednia wersja -->
+			<version>4.0.1</version> <!-- or suitable version -->
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>
@@ -80,6 +83,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -89,33 +93,35 @@
 					<target>17</target>
 				</configuration>
 			</plugin>
-		    <plugin>
-		        <groupId>com.microsoft.azure</groupId>
-		        <artifactId>azure-webapp-maven-plugin</artifactId>
-		        <version>2.13.0</version>
-		        <configuration>
-		            <schemaVersion>v2</schemaVersion>
-		            <resourceGroup>springboot-shop-1732577970668-rg</resourceGroup>
-		            <appName>springboot-shop-1732577970668</appName>
-		            <pricingTier>D1</pricingTier>
-		            <region>westeurope</region>
-		            <runtime>
-		                <os>Windows</os>
-		                <javaVersion>Java 17</javaVersion>
-		                <webContainer>Java SE</webContainer>
-		            </runtime>
-		            <deployment>
-		                <resources>
-		                    <resource>
-		                        <directory>${project.basedir}/target</directory>
-		                        <includes>
-		                            <include>*.jar</include>
-		                        </includes>
-		                    </resource>
-		                </resources>
-		            </deployment>
-		        </configuration>
-		    </plugin>
+
+			<plugin>
+				<groupId>com.microsoft.azure</groupId>
+				<artifactId>azure-webapp-maven-plugin</artifactId>
+				<version>2.13.0</version>
+				<configuration>
+					<schemaVersion>v2</schemaVersion>
+					<resourceGroup>springboot-shop-1732577970668-rg</resourceGroup>
+					<appName>springboot-shop-1732577970668</appName>
+					<pricingTier>D1</pricingTier>
+					<region>westeurope</region>
+					<runtime>
+						<os>Windows</os>
+						<javaVersion>Java 17</javaVersion>
+						<webContainer>Java SE</webContainer>
+					</runtime>
+					<deployment>
+						<resources>
+							<resource>
+								<directory>${project.basedir}/target</directory>
+								<includes>
+									<include>*.jar</include>
+								</includes>
+							</resource>
+						</resources>
+					</deployment>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
